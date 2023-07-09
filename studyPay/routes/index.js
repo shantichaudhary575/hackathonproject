@@ -15,23 +15,8 @@ router.get("/signupform", function (req, res, next) {
   res.render("signupform");
 });
 
-router.post("/signup", async function(req, res, next){
-  // console.log(req.body)
-  debugger
-  const users = new Users({
-    "name": req.body.name,
-    "email" : req.body.email,
-    "password": req.body.password,
-    "contact": req.body.contact,
-    "fieldOfInterest":req.body.fieldOfInterest,
-    
-    })
 
-  await Users.insertMany(users);
-  res.redirect('/')
-  //res.render("Homepage");
+router.get("/home", function (req, res, next) {
+  res.render("Homepage");
 });
-   
-
-  
 module.exports = router;
