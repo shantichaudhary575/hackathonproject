@@ -36,11 +36,8 @@
                 We provide services to the students studying in high school and bachelor level to find the job they wish to do.
               </p>
               <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#job"
-                  >Get Started</a
-                >
-                <a class="btn btn-outline-light btn-lg px-4" href="#!"
-                  >Learn More</a
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/addjob"
+                  >Add Job</a
                 >
               </div>
             </div>
@@ -64,70 +61,25 @@
 </div>
 <div class="container px-5 my-5">
         <div class="row gx-5">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <div
-              class="feature  bg-gradient text-white rounded-3 mb-3" style="background-color:#2F69B3;"
-            >
-              <i class="bi bi-building"></i>
+          <% jobsList.forEach((job,i) =>{%>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+              <div
+                class="feature  bg-gradient text-white rounded-3 mb-3" style="background-color:#2F69B3;"
+              >
+                <i class="bi bi-building"></i>
+              </div>
+              <h2 class="h4 fw-bolder" ><%= job.position %></h2>
+              <p class="text-muted" style="margin: 0;"><%= job.company_name %></p>
+              <p class="text-muted">Bhairahawa</p>
+              <p><%= job.job_description %></p> 
+              <p style="margin: 0;"><%= job.contact %></p>
+              
+              <a class="text-decoration-none" href="#!" style="color:#6AAEDF;">
+                View Job Openings
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-            <h1>Search Results</h1>
-            <% userList.forEach((users,i) =>{%>
-            <h5 ><%= users.name %></h5>
-            <h6 >
-               <%= users.email  %>
-            </h6>
-            <p class="card-text"><%= users.contact  %></p>
-            <p class="card-text"><%= users.fieldOfInterest %></p>
-            <% }) %>
-
-            <h2 class="h4 fw-bolder" >Junior Product Design</h2>
-            <p class="text-muted" style="margin: 0;">Quantum Tech</p>
-            <p class="text-muted">Bhairahawa</p>
-            <p>
-               We are seeking a passionate Product Designer to join our team.Explore our diverse range of job opportunities and take your career to
-              new heights. Join our team of professionals and make a difference in the
-              world of work.
-            </p>
-            <a class="text-decoration-none" href="#!" style="color:#6AAEDF;">
-              View Job Openings
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <div
-              class="feature  bg-gradient text-white rounded-3 mb-3" style="background-color:#2F69B3;"
-            >
-              <i class="bi bi-collection"></i>
-            </div>
-
-            <h2 class="h4 fw-bolder">Print Production Designer</h2>
-            <p class="text-muted" style="margin: 0;">Nova Tech</p>
-            <p class="text-muted">Manigram</p>
-            <p>
-             We are seeking a passionate Product Designer to join our team. It's an exciting opportunity for a fresher who is enthusiastic about designing innovative products and is eager to kick-start their career in the tech industry.
-            </p>
-            <a class="text-decoration-none" href="#!" style="color:#6AAEDF;">
-              View Job Openings
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-          <div class="col-lg-4">
-             <div
-              class="feature  bg-gradient text-white rounded-3 mb-3" style="background-color:#2F69B3;"
-            >
-              <i class="bi bi-toggles2"></i>
-            </div>
-            <h2 class="h4 fw-bolder">Senior Graphic Designer</h2>
-            <p class="text-muted" style="margin: 0;">Tech Company</p>
-            <p class="text-muted">Butwal</p>
-            <p>
-               We are seeking a passionate Product Designer to join our team. It's an exciting opportunity for a fresher who is enthusiastic about designing innovative products and is eager to kick-start their career in the tech industry.
-            </p>
-            <a class="text-decoration-none" href="#!" style="color:#6AAEDF;">
-              View Job Openings
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+            <% })  %>
         </div>
       </div>
     </section>

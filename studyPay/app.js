@@ -10,7 +10,7 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 mongoose
-  .connect("mongodb://127.0.0.1/studyPay") 
+  .connect("mongodb://127.0.0.1/studyPay2") 
   .then(() => {
     console.log("connected to db");
   })

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include header11.ejs %>
+
+  <body>
+    <div class="container">
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <form method="post" action="/addJob">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">company_name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="company_name"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Position</label>
+              <input
+                type="Position"
+                name="position"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Job_description</label
+              >
+              <input
+                type="text"
+                name="job_description"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="UserContact" class="form-label">Contact</label>
+              <input
+                type="text"
+                name="contact"
+                class="form-control"
+                id="UserContact"
+              />
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

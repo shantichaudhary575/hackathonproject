@@ -1,13 +1,14 @@
 var express = require("express");
 var router = express.Router();
 const Users = require("../models/users");
+const Jobs = require("../models/jobs");
 
 /* GET home page. */
 router.get("/userpage", function (_req, res, _next) {
-  Users.find().then((users) => {
+  Jobs.find().then((jobs) => {
     res.render("dashboard", {
       name: "study pay",
-      userList: users,
+      jobsList: jobs,
     });
   });
 });
@@ -25,6 +26,22 @@ router.get("/signupform", function (req, res, next) {
 });
 router.get("/jobslist", function (req, res, next) {
   res.render("jobslist");
+});
+router.get("/addjob", function (req, res, next) {
+  res.render("jobsadd");
+});
+
+router.post("/addJob", async function (req, res, next) {
+  let job = new Jobs({
+    company_name: req.body.company_name,
+    position: req.body.position,
+    job_description: req.body.job_description,
+    contact: req.body.contact,
+    fieldOfInterest: req.body.fieldOfInterest,
+  });
+
+  await Jobs.insertMany(job);
+  res.redirect("/userpage");
 });
 
 router.get('/delete/:index',async function(req,res,_next){
@@ -46,68 +63,23 @@ router.post("/signup", async function (req, res, next) {
     fieldOfInterest: req.body.fieldOfInterest,
   });
 
-  router.get("/search", async function (req, res, next) {
-    const query = req.query.q; // Get the search query from the request query parameters
-
-    try {
-      const searchResults = await Users.find({
-        fieldOfInterest: { $regex: new RegExp(query, "i") },
-      }).exec();
-
-      res.render("dashboard", { title: "Express", results: searchResults });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("An error occurred during the search.");
-    }
-  });
-
   await Users.insertMany(users);
   res.redirect("/userpage");
-  //res.render("Homepage");
-  // router.get("/search", async function(req, res, next) {
-  //   const query = req.query.q; // Get the search query from the request query parameters
+});
 
-  //   try {
-  //     const searchResults = await Users.find({
-  //       fieldOfInterest: { $regex: new RegExp(query, "i") }
-  //     }).exec();
+router.get("/search", async function (req, res, next) {
+  const query = req.query.q; // Get the search query from the request query parameters
 
-  //     res.render("searchResults", { results: searchResults });
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).send("An error occurred during the search.");
-  //   }
-  // });
+  try {
+    const searchResults = await Users.find({
+      fieldOfInterest: { $regex: new RegExp(query, "i") },
+    }).exec();
 
-  // router.get("/search", async function(req, res, next) {
-  //   const query = req.query.q; // Get the search query from the request query parameters
-
-  //   try {
-  //     const searchResults = await Users.find({
-  //       fieldOfInterest: { $regex: new RegExp(query, "i") }
-  //     }).exec();
-
-  //     res.render("mainpage", { title: "Express", results: searchResults });
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).send("An error occurred during the search.");
-  //   }
-  // });
-
-  // router.get("/search", async function(req, res, next) {
-  //   const query = req.query.q; // Get the search query from the request query parameters
-
-  //   try {
-  //     const searchResults = await Users.find({
-  //       fieldOfInterest: { $regex: new RegExp(query, "i") }
-  //     }).exec();
-
-  //     res.render("dashboard", { results: searchResults });
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).send("An error occurred during the search.");
-  //   }
-  // });
+    res.render("dashboard", { title: "Express", results: searchResults });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("An error occurred during the search.");
+  }
 });
 
 module.exports = router;
