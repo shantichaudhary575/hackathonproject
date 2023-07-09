@@ -7,7 +7,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/header1", function (req, res, next) {
-  res.render("header1");
+  res.render("header11");
 });
 
 module.exports = router;
