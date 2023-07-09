@@ -6,8 +6,10 @@ router.get("/", function (req, res, next) {
   res.render("mainpage", { title: "Express" });
 });
 
-router.get("/header1", function (req, res, next) {
-  res.render("header1");
+router.get("/header2", function (req, res, next) {
+  res.render("header2");
 });
-
+router.get("/signupform", function (req, res, next) {
+  res.render("signupform");
+});
 module.exports = router;
