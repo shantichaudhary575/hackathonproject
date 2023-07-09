@@ -48,16 +48,18 @@
         </div>
       </div>
     </header>
+    
     <!-- Features section-->
     <section class="py-5 border-bottom" id="features">
      <div class="row" style="display: flex; justify-content: center; align-items: center;">
   <div class="col-lg-4">
-    <form class="navbar-form navbar-right" role="search">
+    <form class="navbar-form navbar-right" role="search" action="/search" method="GET">
       <div class="form-group" style="display: flex;">
         <input type="text" class="form-control" placeholder="What position are you looking for?" />
         <a class="nav-link btn btn-primary text-light" style="margin-left:10px;" href="">Search</a>
       </div>
     </form>
+    
   </div>
 </div>
 <div class="container px-5 my-5">
@@ -68,6 +70,16 @@
             >
               <i class="bi bi-building"></i>
             </div>
+            <h1>Search Results</h1>
+            <% userList.forEach((users,i) =>{%>
+            <h5 ><%= users.name %></h5>
+            <h6 >
+               <%= users.email  %>
+            </h6>
+            <p class="card-text"><%= users.contact  %></p>
+            <p class="card-text"><%= users.fieldOfInterest %></p>
+            <% }) %>
+
             <h2 class="h4 fw-bolder">Junior Product Design</h2>
             <p class="text-muted" style="margin: 0;">Quantum Tech</p>
             <p class="text-muted">Bhairahawa</p>
