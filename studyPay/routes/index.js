@@ -6,16 +6,10 @@ router.get("/", function (req, res, next) {
   res.render("mainpage", { title: "Express" });
 });
 
-router.get("/header2", function (req, res, next) {
-  res.render("header2");
-});
 router.get("/signupform", function (req, res, next) {
   res.render("signupform");
 });
 
-router.get("/header11", function (req, res, next) {
-  res.render("header11");
-});
 
 router.get("/home", function (req, res, next) {
   res.render("Homepage");
