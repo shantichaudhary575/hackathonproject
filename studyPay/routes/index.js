@@ -23,6 +23,17 @@ router.get("/userpage", function (req, res, next) {
 router.get("/signupform", function (req, res, next) {
   res.render("signupform");
 });
+router.get("/jobslist", function (req, res, next) {
+  res.render("jobslist");
+});
+
+router.get('/delete/:index',async function(req,res,_next){
+
+   console.log(req.params.index);
+//  users.splice(req.params.index,1)
+await Users.deleteOne({_id:req.params.index})
+ res.redirect('/userpage')
+});
 
 router.post("/signup", async function (req, res, next) {
   // console.log(req.bonodedy)
