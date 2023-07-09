@@ -50,7 +50,7 @@
     </header>
     
     <!-- Features section-->
-    <section class="py-5 border-bottom" id="features">
+    <section class="py-5 border-bottom" id="job">
      <div class="row" style="display: flex; justify-content: center; align-items: center;">
       <div class="col-lg-4">
         <form class="navbar-form navbar-right" role="search" action="/search" method="GET">
@@ -60,29 +60,27 @@
           </div>
         </form>
     
-  </div> -->
+  </div>
 </div>
 <div class="container px-5 my-5">
         <div class="row gx-5">
-          <% userList.forEach((users,i) =>{%>
-            <h5 > name: <%= users.name %></h5>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div
+              class="feature  bg-gradient text-white rounded-3 mb-3" style="background-color:#2F69B3;"
+            >
+              <i class="bi bi-building"></i>
+            </div>
+            <h1>Search Results</h1>
+            <% userList.forEach((users,i) =>{%>
+            <h5 ><%= users.name %></h5>
             <h6 >
                <%= users.email  %>
             </h6>
             <p class="card-text"><%= users.contact  %></p>
             <p class="card-text"><%= users.fieldOfInterest %></p>
-            <a href="/delete/<%= users._id %>" class="btn btn-danger">Delete</a>
             <% }) %>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <!-- <div
-              class="feature  bg-gradient text-white rounded-3 mb-3" style="background-color:#2F69B3;"
-            >
-              <i class="bi bi-building"></i>
-            </div> -->
-           
-           
 
-            <!-- <h2 class="h4 fw-bolder">Junior Product Design</h2>
+            <h2 class="h4 fw-bolder" >Junior Product Design</h2>
             <p class="text-muted" style="margin: 0;">Quantum Tech</p>
             <p class="text-muted">Bhairahawa</p>
             <p>
@@ -129,7 +127,7 @@
               View Job Openings
               <i class="bi bi-arrow-right"></i>
             </a>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -150,151 +148,110 @@
           <div class="col-lg-6 col-xl-4">
             <div class="card mb-5 mb-xl-0">
               <div class="card-body p-5">
-                <div class="small text-uppercase fw-bold text-muted">Free</div>
-                <div class="mb-3">
-                  <span class="display-4 fw-bold">$0</span>
-                  <span class="text-muted">/ mo.</span>
+                <img src="assets/Kritima.png" class="img-fluid mb-4"  alt="Kritima" style="max-width: 150px;">
+                <div class="mb-6">
+                  <h5 class="fw-bold">Kritima Khanal</h5>
                 </div>
                 <ul class="list-unstyled mb-4">
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    <strong>1 users</strong>
+                    Nepathya College
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    5GB storage
+                    Faculty: Bsc CSIT
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Unlimited public projects
+                    WLIT Fellow 2023
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Community access
+                    Frontened Developer
                   </li>
-                  <li class="mb-2 text-muted">
-                    <i class="bi bi-x"></i>
-                    Unlimited private projects
+                  <li class="mb-2">
+                    <i class="bi bi-check text-primary"></i>
+                    Assisted in Backend
                   </li>
-                  <li class="mb-2 text-muted">
-                    <i class="bi bi-x"></i>
-                    Dedicated support
-                  </li>
-                  <li class="mb-2 text-muted">
-                    <i class="bi bi-x"></i>
-                    Free linked domain
-                  </li>
-                  <li class="text-muted">
-                    <i class="bi bi-x"></i>
-                    Monthly status reports
-                  </li>
+
                 </ul>
                 <div class="d-grid">
-                  <a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                  <a class="btn btn-outline-primary" href="#!">More Details</a>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Pricing card pro-->
+          <!-- Card Shanti-->
           <div class="col-lg-6 col-xl-4">
             <div class="card mb-5 mb-xl-0">
               <div class="card-body p-5">
-                <div class="small text-uppercase fw-bold">
-                  <i class="bi bi-star-fill text-warning"></i>
-                  Pro
-                </div>
-                <div class="mb-3">
-                  <span class="display-4 fw-bold">$9</span>
-                  <span class="text-muted">/ mo.</span>
+                <img src="assets/Shanti.png" class="img-fluid mb-4"  alt="Shanti" style="max-width: 150px;">
+                <div class="mb-6">
+                  <h5 class="fw-bold">Shanti Salami Magar</h5>
                 </div>
                 <ul class="list-unstyled mb-4">
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    <strong>5 users</strong>
+                    Nepathya College
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    5GB storage
+                    Faculty: Bsc CSIT
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Unlimited public projects
+                    WLIT Fellow 2023
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Community access
+                    Backend Developer
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Unlimited private projects
+                    Assisted in Frontened
                   </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check text-primary"></i>
-                    Dedicated support
-                  </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check text-primary"></i>
-                    Free linked domain
-                  </li>
-                  <li class="text-muted">
-                    <i class="bi bi-x"></i>
-                    Monthly status reports
-                  </li>
+
                 </ul>
                 <div class="d-grid">
-                  <a class="btn btn-primary" href="#!">Choose plan</a>
+                  <a class="btn btn-outline-primary" href="#!">More Details</a>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Pricing card enterprise-->
-          <div class="col-lg-6 col-xl-4">
-            <div class="card">
+          <!-- About Shanti -->
+          
+           <div class="col-lg-6 col-xl-4">
+            <div class="card mb-5 mb-xl-0">
               <div class="card-body p-5">
-                <div class="small text-uppercase fw-bold text-muted">
-                  Enterprise
-                </div>
-                <div class="mb-3">
-                  <span class="display-4 fw-bold">$49</span>
-                  <span class="text-muted">/ mo.</span>
+                <img src="assets/Nabina.png" class="img-fluid mb-4"  alt="Nabina" style="max-width: 150px;">
+                <div class="mb-6">
+                  <h5 class="fw-bold">Nabina Paudel</h5>
                 </div>
                 <ul class="list-unstyled mb-4">
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    <strong>Unlimited users</strong>
+                    Oxford College
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    5GB storage
+                    Faculty: BIM
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Unlimited public projects
+                    WLIT Fellow 2023
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Community access
+                    Content Writer
                   </li>
                   <li class="mb-2">
                     <i class="bi bi-check text-primary"></i>
-                    Unlimited private projects
+                    Presentation
                   </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check text-primary"></i>
-                    Dedicated support
-                  </li>
-                  <li class="mb-2">
-                    <i class="bi bi-check text-primary"></i>
-                    <strong>Unlimited</strong>
-                    linked domains
-                  </li>
-                  <li class="text-muted">
-                    <i class="bi bi-check text-primary"></i>
-                    Monthly status reports
-                  </li>
+
                 </ul>
                 <div class="d-grid">
-                  <a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                  <a class="btn btn-outline-primary" href="#!">More Details</a>
                 </div>
               </div>
             </div>
