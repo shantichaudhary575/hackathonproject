@@ -4,40 +4,38 @@
 
   <body>
     <div class="container">
-      <!-- Signup form -->
+      
       <div class="row justify-content-center">
         <div class="col-lg-4 col-md-6">
-          <form method="post" action="/signup">
+          <form method="post" action="/addJob">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <label for="exampleInputEmail1" class="form-label">Full Name</label>
               <input
                 type="text"
                 class="form-control"
-                name="name"
+                name="company_name"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
               />
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <label for="exampleInputEmail1" class="form-label">Position</label>
               <input
-                type="email"
-                name="email"
+                type="Position"
+                name="position"
                 class="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
               />
-              <div id="emailHelp" class="form-text">
-                We'll never share your email with anyone else.
-              </div>
+              
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label"
-                >Password</label
+                >Resume</label
               >
               <input
-                type="password"
-                name="password"
+                type="file"
+                name="job_description"
                 class="form-control"
                 id="exampleInputPassword1"
               />
@@ -51,18 +49,6 @@
                 id="UserContact"
               />
             </div>
-            <!-- <div class="mb-3">
-              <label for="InterestedField" class="form-label"
-                >Field of Interest</label
-              >
-              <select class="form-control" id="JobList" name="JobList">
-                <option>Designing</option>
-                <option>Translator</option>
-                <option>Content Writer</option>
-                <option>.Net</option>
-                <option>Technical Writing</option>
-              </select>
-            </div> -->
             <div class="mb-3">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

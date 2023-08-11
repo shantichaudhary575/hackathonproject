@@ -30,7 +30,15 @@ router.get("/jobslist", function (req, res, next) {
 router.get("/addjob", function (req, res, next) {
   res.render("jobsadd");
 });
+router.get("/applyjob", function (req, res, next) {
+  res.render("applyjob");
+});
 
+router.get("/jobdetail/:id", async function(req,res,next){
+  const job = await Jobs.findOne({_id: req.params.id})
+  console.log(job.position, req.params.id)
+   res.render('jobdetail', {job})
+});
 router.post("/addJob", async function (req, res, next) {
   let job = new Jobs({
     company_name: req.body.company_name,
